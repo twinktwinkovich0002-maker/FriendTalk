@@ -1,63 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>FriendTalk</title>
-<link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FriendTalk</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app" class="theme-light">
-  <aside class="sidebar">
-    <div class="brand">FriendTalk</div>
-    <div class="profile">
-      <div class="avatar" id="profileAvatar">FT</div>
-      <div class="profile-info">
-        <input id="nameInput" placeholder="Введите ник" />
-        <div class="controls">
-          <label class="btn file-btn">Загрузить аватар
-            <input id="avatarFile" type="file" accept="image/*" style="display:none">
-          </label>
-          <button id="saveProfile" class="btn">Сохранить</button>
-        </div>
-      </div>
-    </div>
+  <div id="auth">
+    <h1>FriendTalk 🔐</h1>
+    <input type="text" id="username" placeholder="Имя пользователя">
+    <input type="password" id="password" placeholder="Пароль">
+    <button id="register">Регистрация</button>
+    <button id="login">Войти</button>
+    <p id="authMessage"></p>
+  </div>
 
-    <div class="theme-toggle">
-      <label>Тема:
-        <select id="themeSelect">
-          <option value="light">Светлая</option>
-          <option value="dark">Тёмная</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="online-section">
-      <div class="section-title">Онлайн</div>
-      <div id="usersList" class="users-list">—</div>
-    </div>
-
-    <div class="footer-note">Данные сохраняются. Чтобы друг подключился — дай ему ссылку сервера.</div>
-  </aside>
-
-  <main class="main">
-    <header class="chat-header">
-      <div class="chat-title">FriendTalk — онлайн</div>
-      <div id="status" class="status muted">Отключено</div>
+  <div id="chat" class="hidden">
+    <header>
+      <h2>Добро пожаловать, <span id="userDisplay"></span>!</h2>
+      <button id="logout">Выйти</button>
     </header>
 
-    <section id="messages" class="messages" aria-live="polite"></section>
+    <section id="online">
+      <h3>🟢 В сети:</h3>
+      <ul id="onlineList"></ul>
+    </section>
 
-    <footer class="composer">
-      <textarea id="messageInput" placeholder="Напишите сообщение..."></textarea>
-      <div class="composer-actions">
-        <button id="sendBtn" class="btn send">Отправить</button>
-        <button id="clearLocal" class="btn small">Очистить локально</button>
-      </div>
+    <section id="messages"></section>
+
+    <footer>
+      <input id="messageInput" type="text" placeholder="Введите сообщение...">
+      <button id="send">Отправить</button>
     </footer>
-  </main>
-</div>
+  </div>
 
-<script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
