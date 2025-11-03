@@ -3,22 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FriendTalk — Telegram style</title>
+  <title>FriendTalk — вход по нику</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="app">
     <aside id="sidebar">
-      <div id="brand">FriendTalk <span>🔐</span></div>
+      <div id="brand">FriendTalk 🚀</div>
 
       <div id="authPanel">
-        <input id="username" placeholder="Имя пользователя" autocomplete="username" />
-        <input id="password" type="password" placeholder="Пароль" autocomplete="current-password" />
-        <div class="row">
-          <button id="registerBtn">Регистрация</button>
-          <button id="loginBtn">Войти</button>
-        </div>
-        <div id="authMsg" class="muted"></div>
+        <input id="username" placeholder="Введите ник" />
+        <button id="loginBtn">Войти</button>
       </div>
 
       <div id="newChatPanel" class="hidden">
@@ -44,10 +39,8 @@
     <main id="main">
       <div id="chatHeader" class="hidden">
         <div id="chatTitle"></div>
-        <div id="chatControls">
-          <button id="leaveChatBtn" title="Покинуть чат">Покинуть</button>
-        </div>
-        <div id="meBlock" class="hidden">
+        <button id="leaveChatBtn">Покинуть чат</button>
+        <div id="meBlock">
           <img id="myAvatar" alt="avatar" />
           <span id="meName"></span>
           <button id="logout">Выйти</button>
